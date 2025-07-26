@@ -72,9 +72,9 @@ const Skills = () => {
       skills: [
         { name: "AI/ML", level: 60, icon: "🤖" },
         { name: "Python", level: 70, icon: "🐍" },
+        { name: "Blockchain", level: 65, icon: "⛓️" },
         { name: "Cybersecurity", level: 55, icon: "🛡️" },
-        { name: "Data Analysis", level: 65, icon: "📊" },
-        { name: "TensorFlow", level: 58, icon: "🧠" }
+        { name: "Data Analysis", level: 65, icon: "📊" }
       ]
     },
     {
@@ -164,20 +164,20 @@ const Skills = () => {
 
         {/* Technical Highlights */}
         <div className="mt-16 grid md:grid-cols-4 gap-8">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">6+</div>
+          <div className="text-center hover-lift">
+            <div className="text-3xl font-bold text-primary mb-2 animate-pulse">12+</div>
             <p className="text-muted-foreground">Major Projects</p>
           </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-secondary mb-2">15+</div>
+          <div className="text-center hover-lift">
+            <div className="text-3xl font-bold text-secondary mb-2 animate-pulse">20+</div>
             <p className="text-muted-foreground">Technologies</p>
           </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-accent mb-2">3+</div>
+          <div className="text-center hover-lift">
+            <div className="text-3xl font-bold text-accent mb-2 animate-pulse">5+</div>
             <p className="text-muted-foreground">Domains</p>
           </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">100+</div>
+          <div className="text-center hover-lift">
+            <div className="text-3xl font-bold text-primary mb-2 animate-pulse">200+</div>
             <p className="text-muted-foreground">GitHub Commits</p>
           </div>
         </div>

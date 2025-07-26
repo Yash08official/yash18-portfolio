@@ -42,8 +42,23 @@ const About = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Professional Image */}
+          <div className="relative order-2 lg:order-1">
+            <div className="relative group">
+              <img 
+                src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=600&q=80"
+                alt="Modern development workspace"
+                className="rounded-2xl shadow-elegant hover-lift w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute bottom-4 left-4 bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-lg p-3">
+                <p className="text-sm font-medium">💻 Clean Code Enthusiast</p>
+              </div>
+            </div>
+          </div>
+
           {/* About Text */}
-          <div className="space-y-6">
+          <div className="space-y-6 order-1 lg:order-2">
             <div className="prose prose-lg max-w-none text-foreground">
               <p className="text-lg leading-relaxed">
                 Hello! I'm <span className="text-primary font-semibold">Yash Wasankar</span>, 
@@ -67,12 +82,13 @@ const About = () => {
               </p>
 
               <div className="flex flex-wrap gap-2 mt-6">
-                <Badge variant="secondary">MERN Stack</Badge>
-                <Badge variant="secondary">Java</Badge>
-                <Badge variant="secondary">Salesforce</Badge>
-                <Badge variant="secondary">Cybersecurity</Badge>
-                <Badge variant="secondary">AI/ML</Badge>
-                <Badge variant="secondary">Cloud Computing</Badge>
+                <Badge variant="secondary" className="hover:bg-primary hover:text-primary-foreground transition-colors">MERN Stack</Badge>
+                <Badge variant="secondary" className="hover:bg-primary hover:text-primary-foreground transition-colors">Java</Badge>
+                <Badge variant="secondary" className="hover:bg-primary hover:text-primary-foreground transition-colors">Salesforce</Badge>
+                <Badge variant="secondary" className="hover:bg-primary hover:text-primary-foreground transition-colors">Blockchain</Badge>
+                <Badge variant="secondary" className="hover:bg-primary hover:text-primary-foreground transition-colors">Cybersecurity</Badge>
+                <Badge variant="secondary" className="hover:bg-primary hover:text-primary-foreground transition-colors">AI/ML</Badge>
+                <Badge variant="secondary" className="hover:bg-primary hover:text-primary-foreground transition-colors">Cloud Computing</Badge>
               </div>
             </div>
           </div>

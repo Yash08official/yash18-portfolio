@@ -106,17 +106,27 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={index} 
-              className="group hover-lift border-0 shadow-lg bg-card/50 backdrop-blur-sm overflow-hidden"
+              className="group hover-lift card-glow border-0 shadow-lg bg-card/50 backdrop-blur-sm overflow-hidden"
             >
-              <CardHeader className="pb-4">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                    {project.icon}
-                  </div>
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src={`https://images.unsplash.com/photo-${index % 3 === 0 ? '1488590528505-98d2b5aba04b' : index % 3 === 1 ? '1487058792275-0ad4aaf24ca7' : '1483058712412-4245e9b90334'}?auto=format&fit=crop&w=400&q=80`}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div className="absolute top-4 right-4">
                   <Badge className={getStatusColor(project.status)}>
                     {project.status}
                   </Badge>
                 </div>
+                <div className="absolute bottom-4 left-4">
+                  <div className="p-2 rounded-lg bg-white/20 backdrop-blur-sm text-white">
+                    {project.icon}
+                  </div>
+                </div>
+              </div>
+              <CardHeader className="pb-4">
                 <CardTitle className="text-xl group-hover:text-gradient transition-all duration-300">
                   {project.title}
                 </CardTitle>

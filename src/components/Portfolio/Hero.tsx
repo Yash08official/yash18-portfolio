@@ -26,13 +26,13 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pattern-dots">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95 dark:from-background/98 dark:via-background/95 dark:to-background/98" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/85 to-background/95 dark:from-background/98 dark:via-background/95 dark:to-background/98" />
       </div>
 
       {/* Floating Shapes */}

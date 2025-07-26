@@ -237,6 +237,25 @@
     }
   }
 
+  /* Modern Card Hover Effects */
+  .card-glow:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-4px) scale(1.02);
+    transition: var(--transition-smooth);
+  }
+
+  /* Background Patterns for White Mode */
+  .pattern-dots {
+    background-image: radial-gradient(circle, hsl(var(--primary) / 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .pattern-grid {
+    background-image: linear-gradient(hsl(var(--border)) 1px, transparent 1px),
+                      linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
   /* Skill Progress Bar */
   .skill-bar {
     position: relative;
