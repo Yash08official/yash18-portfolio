@@ -1,6 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { motion } from "framer-motion";
+import skillsBg from "@/assets/skills-bg.jpg";
 import { 
   Code, 
   Database, 
@@ -106,9 +108,22 @@ const Skills = () => {
   }, []);
 
   return (
-    <section id="skills" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+    <section id="skills" className="py-20 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
+        style={{ backgroundImage: `url(${skillsBg})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/95 to-background/90" />
+      
+      <div className="relative z-10 container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
           <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
             Technical Expertise
           </Badge>
@@ -118,7 +133,7 @@ const Skills = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A comprehensive overview of my technical skills and proficiency levels
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, categoryIndex) => (

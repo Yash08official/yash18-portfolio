@@ -15,6 +15,8 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { motion } from "framer-motion";
+import contactBg from "@/assets/contact-bg.jpg";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -95,9 +97,22 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+    <section id="contact" className="py-20 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
+        style={{ backgroundImage: `url(${contactBg})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/95 to-background/90" />
+      
+      <div className="relative z-10 container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
           <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
             Get In Touch
           </Badge>
@@ -107,7 +122,7 @@ const Contact = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Have a project in mind or just want to chat about technology? I'd love to hear from you!
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}

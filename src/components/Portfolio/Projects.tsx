@@ -2,6 +2,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Github, ExternalLink, BookOpen, Zap, Brain, Hospital, Calculator, Cloud } from "lucide-react";
+import { motion } from "framer-motion";
+import projectsBg from "@/assets/projects-bg.jpg";
 
 const Projects = () => {
   const projects = [
@@ -88,9 +90,22 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+    <section id="projects" className="py-20 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
+        style={{ backgroundImage: `url(${projectsBg})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/95 to-background/90" />
+      
+      <div className="relative z-10 container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
           <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
             Portfolio
           </Badge>
@@ -100,7 +115,7 @@ const Projects = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A showcase of my technical skills and passion for creating innovative solutions
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (

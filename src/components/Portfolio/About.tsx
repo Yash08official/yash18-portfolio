@@ -1,6 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { GraduationCap, Heart, Code, Target } from "lucide-react";
+import { motion } from "framer-motion";
+import codeBg from "@/assets/code-bg.jpg";
 
 const About = () => {
   const highlights = [
@@ -27,9 +29,22 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+    <section id="about" className="py-20 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
+        style={{ backgroundImage: `url(${codeBg})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/95 to-background/90" />
+      
+      <div className="relative z-10 container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
           <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
             About Me
           </Badge>
@@ -39,7 +54,7 @@ const About = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A passionate developer with a love for technology, clean code, and innovation
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Professional Image */}
