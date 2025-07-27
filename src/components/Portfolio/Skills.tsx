@@ -25,6 +25,7 @@ const Skills = () => {
       color: "text-primary",
       skills: [
         { name: "React.js", level: 90, icon: "⚛️" },
+        { name: "TypeScript", level: 85, icon: "🔷" },
         { name: "JavaScript", level: 85, icon: "🟨" },
         { name: "HTML5", level: 95, icon: "🔶" },
         { name: "CSS3", level: 88, icon: "🎨" },
@@ -75,6 +76,7 @@ const Skills = () => {
         { name: "AI/ML", level: 60, icon: "🤖" },
         { name: "Python", level: 70, icon: "🐍" },
         { name: "Blockchain", level: 65, icon: "⛓️" },
+        { name: "Smart Contracts", level: 60, icon: "📜" },
         { name: "Cybersecurity", level: 55, icon: "🛡️" },
         { name: "Data Analysis", level: 65, icon: "📊" }
       ]

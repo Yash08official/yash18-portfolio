@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Github, ExternalLink, BookOpen, Zap, Brain, Hospital, Calculator, Cloud } from "lucide-react";
+import { Github, ExternalLink, BookOpen, Zap, Brain, Hospital, Calculator, Cloud, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 import projectsBg from "@/assets/projects-bg.jpg";
 
@@ -76,6 +76,56 @@ const Projects = () => {
       status: "Completed",
       github: "https://github.com/Yash08official",
       live: "#"
+    },
+    {
+      title: "Blockchain Portfolio Tracker",
+      description: "Decentralized application for tracking cryptocurrency portfolios with real-time price updates and smart contract integration.",
+      icon: <Zap className="w-6 h-6" />,
+      tech: ["Solidity", "Web3.js", "React", "TypeScript", "Ethereum"],
+      category: "Blockchain",
+      status: "Development",
+      github: "https://github.com/Yash08official",
+      live: "#"
+    },
+    {
+      title: "TypeScript Task Manager",
+      description: "Modern task management application built with TypeScript, featuring advanced type safety and clean architecture patterns.",
+      icon: <Brain className="w-6 h-6" />,
+      tech: ["TypeScript", "React", "Node.js", "Prisma", "PostgreSQL"],
+      category: "Full Stack",
+      status: "Live",
+      github: "https://github.com/Yash08official",
+      live: "#"
+    },
+    {
+      title: "Smart Contract Voting System",
+      description: "Transparent voting system using blockchain technology with smart contracts for secure and immutable vote recording.",
+      icon: <Shield className="w-6 h-6" />,
+      tech: ["Solidity", "Hardhat", "React", "Web3.js", "IPFS"],
+      category: "Blockchain",
+      status: "Completed",
+      github: "https://github.com/Yash08official",
+      live: "#"
+    },
+    {
+      title: "E-Commerce Platform",
+      description: "Full-featured e-commerce platform with payment integration, inventory management, and admin dashboard.",
+      icon: <Cloud className="w-6 h-6" />,
+      tech: ["MERN", "TypeScript", "Stripe", "Redux", "AWS"],
+      category: "Full Stack",
+      status: "Enterprise",
+      github: "https://github.com/Yash08official",
+      live: "#"
+    },
+    {
+      title: "Real-time Chat Application",
+      description: "Scalable chat application with real-time messaging, file sharing, and video call functionality using WebRTC.",
+      icon: <Brain className="w-6 h-6" />,
+      tech: ["Socket.io", "TypeScript", "WebRTC", "Redis", "Docker"],
+      category: "Full Stack",
+      status: "Live",
+      github: "https://github.com/Yash08official",
+      live: "#"
     }
   ];
 
@@ -84,6 +134,7 @@ const Projects = () => {
       case "Live": return "bg-success/10 text-success border-success/20";
       case "Published": return "bg-primary/10 text-primary border-primary/20";
       case "Active": return "bg-accent/10 text-accent border-accent/20";
+      case "Development": return "bg-orange-500/10 text-orange-500 border-orange-500/20";
       case "Enterprise": return "bg-secondary/10 text-secondary border-secondary/20";
       default: return "bg-muted/10 text-muted-foreground border-muted/20";
     }
@@ -125,7 +176,14 @@ const Projects = () => {
             >
               <div className="relative h-48 overflow-hidden">
                 <img 
-                  src={`https://images.unsplash.com/photo-${index % 3 === 0 ? '1488590528505-98d2b5aba04b' : index % 3 === 1 ? '1487058792275-0ad4aaf24ca7' : '1483058712412-4245e9b90334'}?auto=format&fit=crop&w=400&q=80`}
+                  src={`https://images.unsplash.com/photo-${
+                    index % 6 === 0 ? '1488590528505-98d2b5aba04b' : 
+                    index % 6 === 1 ? '1487058792275-0ad4aaf24ca7' : 
+                    index % 6 === 2 ? '1483058712412-4245e9b90334' :
+                    index % 6 === 3 ? '1498050108023-c5249f4df085' :
+                    index % 6 === 4 ? '1581090464777-f3220bbe1b8b' :
+                    '1519389950473-47ba0277781c'
+                  }?auto=format&fit=crop&w=400&q=80`}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
