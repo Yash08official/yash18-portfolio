@@ -12,6 +12,8 @@ import {
   Calendar,
   Award
 } from "lucide-react";
+import { motion } from "framer-motion";
+import journeyBg from "@/assets/journey-bg.jpg";
 
 const PersonalJourney = () => {
   const hobbies = [
@@ -87,9 +89,22 @@ const PersonalJourney = () => {
   ];
 
   return (
-    <section id="journey" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+    <section id="journey" className="py-20 relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
+        style={{ backgroundImage: `url(${journeyBg})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-muted/50 via-background/95 to-muted/50" />
+      
+      <div className="relative z-10 container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
           <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
             Personal Journey
           </Badge>
@@ -99,20 +114,33 @@ const PersonalJourney = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             The hobbies, interests, and values that shape who I am as a person and professional
           </p>
-        </div>
+        </motion.div>
 
         {/* Hobbies & Interests */}
-        <div className="mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
           <h3 className="text-2xl font-bold mb-8 text-center">Hobbies & Interests</h3>
           <div className="grid md:grid-cols-2 gap-8">
             {hobbies.map((hobby, index) => (
-              <Card key={index} className="hover-lift border-0 shadow-lg bg-card/50 backdrop-blur-sm">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+              >
+                <Card className="hover-lift enhanced-card border-0 shadow-lg bg-card/50 backdrop-blur-sm group">
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className={`p-3 rounded-lg bg-primary/10 ${hobby.color}`}>
+                    <div className={`p-3 rounded-lg bg-primary/10 ${hobby.color} group-hover:scale-110 transition-transform duration-300`}>
                       {hobby.icon}
                     </div>
-                    <CardTitle className="text-xl">{hobby.title}</CardTitle>
+                    <CardTitle className="text-xl group-hover:text-gradient transition-all duration-300">{hobby.title}</CardTitle>
                   </div>
                 </CardHeader>
                 
@@ -134,10 +162,11 @@ const PersonalJourney = () => {
                     <p className="text-sm italic text-muted-foreground">"{hobby.passion}"</p>
                   </div>
                 </CardContent>
-              </Card>
+                </Card>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Coding Journey */}
         <div className="mb-16">
@@ -217,10 +246,23 @@ const PersonalJourney = () => {
         </div>
 
         {/* Personal Philosophy */}
-        <div className="mt-16 text-center">
-          <Card className="max-w-4xl mx-auto border-0 bg-gradient-to-r from-primary/5 to-secondary/5 backdrop-blur-sm">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <Card className="max-w-4xl mx-auto border-0 bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 backdrop-blur-sm particles-bg hover-lift">
             <CardContent className="p-8">
-              <Heart className="w-12 h-12 text-primary mx-auto mb-6" />
+              <motion.div
+                initial={{ scale: 0.8 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <Heart className="w-12 h-12 text-primary mx-auto mb-6 float" />
+              </motion.div>
               <h3 className="text-2xl font-bold mb-4">My Philosophy</h3>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 "Life is a beautiful blend of passion and purpose. Whether I'm leading a cricket team, 
@@ -229,13 +271,13 @@ const PersonalJourney = () => {
                 creativity to everything I do."
               </p>
               <div className="mt-6 flex justify-center">
-                <Badge className="bg-gradient-to-r from-primary to-secondary text-white border-0 px-6 py-2">
+                <Badge className="bg-gradient-to-r from-primary to-secondary text-white border-0 px-6 py-2 animate-pulse">
                   Code. Create. Connect. Inspire.
                 </Badge>
               </div>
             </CardContent>
           </Card>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

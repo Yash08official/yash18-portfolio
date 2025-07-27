@@ -11,6 +11,8 @@ import {
   Code,
   Coffee
 } from "lucide-react";
+import { motion } from "framer-motion";
+import footerBg from "@/assets/footer-bg.jpg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -59,13 +61,32 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-6">
+    <footer className="bg-card border-t border-border relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
+        style={{ backgroundImage: `url(${footerBg})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/90 to-background/95" />
+      
+      <div className="relative z-10 container mx-auto px-6">
         {/* Main Footer Content */}
-        <div className="py-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="py-16"
+        >
           <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
             {/* Brand & Description */}
-            <div className="lg:col-span-2">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="lg:col-span-2"
+            >
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-3xl font-bold text-gradient">YW</span>
                 <Badge className="bg-primary/10 text-primary border-primary/20">
@@ -80,54 +101,80 @@ const Footer = () => {
               <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
                 <Code className="w-4 h-4" />
                 <span>Made with</span>
-                <Heart className="w-4 h-4 text-red-500" />
+                <Heart className="w-4 h-4 text-red-500 animate-pulse" />
                 <span>and lots of</span>
                 <Coffee className="w-4 h-4" />
               </div>
               <p className="text-xs text-muted-foreground">
                 Built with React, TypeScript, Tailwind CSS, and Framer Motion
               </p>
-            </div>
+            </motion.div>
 
             {/* Quick Links */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
               <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
               <ul className="space-y-3">
                 {quickLinks.map((link, index) => (
-                  <li key={index}>
+                  <motion.li 
+                    key={index}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    viewport={{ once: true }}
+                  >
                     <button
                       onClick={() => scrollToSection(link.href)}
                       className="text-muted-foreground hover:text-primary transition-colors duration-300 animated-underline"
                     >
                       {link.name}
                     </button>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
             {/* Connect */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               <h3 className="font-semibold text-lg mb-4">Connect With Me</h3>
               <div className="space-y-4">
                 {socialLinks.map((social, index) => (
-                  <a
+                  <motion.a
                     key={index}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300 group"
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    viewport={{ once: true }}
                   >
                     <span className="group-hover:scale-110 transition-transform">
                       {social.icon}
                     </span>
                     {social.name}
-                  </a>
+                  </motion.a>
                 ))}
               </div>
 
               {/* Current Status */}
-              <div className="mt-6 p-4 rounded-lg bg-muted/50 border border-border">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="mt-6 p-4 rounded-lg bg-muted/50 border border-border hover-lift"
+              >
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                   <span className="text-sm font-medium">Available for work</span>
@@ -135,15 +182,21 @@ const Footer = () => {
                 <p className="text-xs text-muted-foreground">
                   Open to new opportunities and collaborations
                 </p>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
-        <Separator />
+        <Separator className="opacity-50" />
 
         {/* Bottom Footer */}
-        <div className="py-8">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="py-8"
+        >
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-center md:text-left">
               <p className="text-muted-foreground text-sm">
@@ -155,26 +208,26 @@ const Footer = () => {
             </div>
 
             <div className="flex items-center gap-4">
-              <div className="text-xs text-muted-foreground">
+              <div className="text-xs text-muted-foreground italic">
                 "Code. Create. Connect."
               </div>
               <Button
                 variant="outline"
                 size="sm"
                 onClick={scrollToTop}
-                className="rounded-full p-2 hover:bg-primary hover:text-primary-foreground border-primary/20"
+                className="rounded-full p-2 hover:bg-primary hover:text-primary-foreground border-primary/20 hover:scale-110 transition-all duration-300"
               >
                 <ArrowUp className="w-4 h-4" />
               </Button>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Floating Back to Top Button */}
       <Button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 rounded-full p-3 shadow-lg bg-primary hover:bg-primary-dark z-40 md:hidden"
+        className="fixed bottom-8 right-8 rounded-full p-3 shadow-lg bg-primary hover:bg-primary-dark z-40 md:hidden hover:scale-110 transition-all duration-300"
         size="sm"
       >
         <ArrowUp className="w-5 h-5" />
