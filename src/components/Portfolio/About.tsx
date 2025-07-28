@@ -29,13 +29,16 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 relative overflow-hidden">
+    <section id="about" className="py-20 relative overflow-hidden glow-orbs">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
         style={{ backgroundImage: `url(${codeBg})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/95 to-background/90" />
+      
+      {/* Additional Glowing Elements */}
+      <div className="glow-orbs-center" />
       
       <div className="relative z-10 container mx-auto px-6">
         <motion.div
@@ -141,10 +144,10 @@ const About = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="hover-lift enhanced-card border-0 shadow-md bg-card/50 backdrop-blur-sm group">
+                <Card className="hover-lift enhanced-card border-0 shadow-md glass-morphism backdrop-blur-sm group magic-hover shimmer">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:scale-110 transition-transform duration-300">
+                      <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:scale-110 transition-transform duration-300 floating-icon">
                         {highlight.icon}
                       </div>
                       <div>
@@ -167,7 +170,7 @@ const About = () => {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <Card className="max-w-3xl mx-auto border-0 bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 backdrop-blur-sm particles-bg hover-lift">
+          <Card className="max-w-3xl mx-auto border-0 glass-morphism backdrop-blur-sm particles-bg hover-lift magic-hover animated-gradient">
             <CardContent className="p-8">
               <blockquote className="text-xl md:text-2xl font-medium text-foreground italic mb-4">
                 "Technology is best when it brings people together and solves real problems. 

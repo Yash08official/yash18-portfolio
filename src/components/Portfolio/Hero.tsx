@@ -26,7 +26,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pattern-dots">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pattern-dots glow-orbs">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -35,12 +35,15 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/85 to-background/95 dark:from-background/98 dark:via-background/95 dark:to-background/98" />
       </div>
 
-      {/* Floating Shapes */}
+      {/* Enhanced Floating Glass Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-pulse" />
-        <div className="absolute top-40 right-20 w-32 h-32 bg-secondary/10 rounded-full blur-xl animate-pulse delay-1000" />
-        <div className="absolute bottom-20 left-20 w-24 h-24 bg-accent/10 rounded-full blur-xl animate-pulse delay-2000" />
-        <div className="absolute bottom-40 right-10 w-16 h-16 bg-primary/10 rounded-full blur-xl animate-pulse delay-500" />
+        <div className="absolute top-20 left-10 w-20 h-20 glass-morphism rounded-full blur-sm animate-pulse floating-icon" />
+        <div className="absolute top-40 right-20 w-32 h-32 glass-morphism rounded-full blur-md animate-pulse delay-1000 floating-icon" />
+        <div className="absolute bottom-20 left-20 w-24 h-24 glass-morphism rounded-full blur-sm animate-pulse delay-2000 floating-icon" />
+        <div className="absolute bottom-40 right-10 w-16 h-16 glass-morphism rounded-full blur-sm animate-pulse delay-500 floating-icon" />
+        
+        {/* Central Glow Orb */}
+        <div className="glow-orbs-center" />
       </div>
 
       <div className="relative z-10 container mx-auto px-6 text-center">
@@ -105,7 +108,7 @@ const Hero = () => {
           >
             <Button 
               size="lg" 
-              className="group px-8 py-6 text-lg font-semibold bg-gradient-to-r from-primary to-secondary hover:from-primary-dark hover:to-secondary border-0 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="group px-8 py-6 text-lg font-semibold bg-gradient-to-r from-primary to-secondary hover:from-primary-dark hover:to-secondary border-0 shadow-lg hover:shadow-xl transition-all duration-300 shimmer magic-hover animated-gradient"
             >
               <Mail className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
               Get In Touch
@@ -114,7 +117,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="group px-8 py-6 text-lg font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              className="group px-8 py-6 text-lg font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 glass-morphism magic-hover"
             >
               <Download className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
               Download CV
@@ -130,7 +133,7 @@ const Hero = () => {
               href="https://github.com/Yash08official"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-card border border-border hover:border-primary transition-all duration-300 group hover:scale-110"
+              className="p-3 rounded-full glass-morphism border border-border hover:border-primary transition-all duration-300 group hover:scale-110 magic-hover floating-icon"
             >
               <Github className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
             </a>
@@ -139,14 +142,14 @@ const Hero = () => {
               href="https://www.linkedin.com/in/yash-wasankar-842886219/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-card border border-border hover:border-primary transition-all duration-300 group hover:scale-110"
+              className="p-3 rounded-full glass-morphism border border-border hover:border-primary transition-all duration-300 group hover:scale-110 magic-hover floating-icon"
             >
               <Linkedin className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
             </a>
             
             <a
               href="mailto:yashwasankar008@gmail.com"
-              className="p-3 rounded-full bg-card border border-border hover:border-primary transition-all duration-300 group hover:scale-110"
+              className="p-3 rounded-full glass-morphism border border-border hover:border-primary transition-all duration-300 group hover:scale-110 magic-hover floating-icon"
             >
               <Mail className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
             </a>
@@ -155,7 +158,7 @@ const Hero = () => {
               href="https://leetcode.com/yash08official"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-card border border-border hover:border-primary transition-all duration-300 group hover:scale-110"
+              className="p-3 rounded-full glass-morphism border border-border hover:border-primary transition-all duration-300 group hover:scale-110 magic-hover floating-icon"
             >
               <ExternalLink className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
             </a>

@@ -354,4 +354,190 @@
       radial-gradient(circle at 50% 50%, hsl(var(--accent) / 0.05) 0%, transparent 50%);
     z-index: -1;
   }
+
+  /* Blurred Glowing Circles */
+  .glow-orbs {
+    position: relative;
+  }
+
+  .glow-orbs::before,
+  .glow-orbs::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    z-index: -1;
+    animation: float-glow 8s ease-in-out infinite;
+  }
+
+  .glow-orbs::before {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.3), hsl(var(--secondary) / 0.2));
+    top: -150px;
+    left: -150px;
+    animation-delay: 0s;
+  }
+
+  .glow-orbs::after {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(225deg, hsl(var(--accent) / 0.3), hsl(var(--primary) / 0.2));
+    bottom: -100px;
+    right: -100px;
+    animation-delay: 4s;
+  }
+
+  .glow-orbs-center::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, hsl(var(--primary) / 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(60px);
+    z-index: -1;
+    animation: pulse-glow-center 6s ease-in-out infinite;
+  }
+
+  /* Enhanced Glass Effect */
+  .glass-morphism {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .glass-morphism {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Floating Animation for Glow Orbs */
+  @keyframes float-glow {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+      opacity: 0.7;
+    }
+    33% {
+      transform: translateY(-20px) scale(1.1);
+      opacity: 0.9;
+    }
+    66% {
+      transform: translateY(10px) scale(0.9);
+      opacity: 0.8;
+    }
+  }
+
+  /* Pulse Glow Animation for Center */
+  @keyframes pulse-glow-center {
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.2);
+      opacity: 0.5;
+    }
+  }
+
+  /* Enhanced Shimmer Animation */
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    animation: shimmer-move 3s infinite;
+  }
+
+  @keyframes shimmer-move {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  /* Floating Icons */
+  .floating-icon {
+    animation: float-icon 4s ease-in-out infinite;
+  }
+
+  @keyframes float-icon {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+      transform: translateY(-10px) rotate(5deg);
+    }
+    66% {
+      transform: translateY(5px) rotate(-3deg);
+    }
+  }
+
+  /* Gradient Animation */
+  .animated-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 4s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Magic Hover Effect */
+  .magic-hover {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .magic-hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, hsl(var(--primary) / 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .magic-hover:hover::before {
+    opacity: 1;
+  }
+
+  .magic-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elegant);
+  }
 }
