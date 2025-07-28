@@ -37,10 +37,10 @@ const Hero = () => {
 
       {/* Enhanced Floating Glass Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-20 h-20 glass-morphism rounded-full blur-sm animate-pulse floating-icon" />
-        <div className="absolute top-40 right-20 w-32 h-32 glass-morphism rounded-full blur-md animate-pulse delay-1000 floating-icon" />
-        <div className="absolute bottom-20 left-20 w-24 h-24 glass-morphism rounded-full blur-sm animate-pulse delay-2000 floating-icon" />
-        <div className="absolute bottom-40 right-10 w-16 h-16 glass-morphism rounded-full blur-sm animate-pulse delay-500 floating-icon" />
+        <div className="absolute top-20 left-10 w-20 h-20 glass-morphism rounded-full blur-sm animate-pulse" />
+        <div className="absolute top-40 right-20 w-32 h-32 glass-morphism rounded-full blur-md animate-pulse delay-1000" />
+        <div className="absolute bottom-20 left-20 w-24 h-24 glass-morphism rounded-full blur-sm animate-pulse delay-2000" />
+        <div className="absolute bottom-40 right-10 w-16 h-16 glass-morphism rounded-full blur-sm animate-pulse delay-500" />
         
         {/* Central Glow Orb */}
         <div className="glow-orbs-center" />
@@ -133,7 +133,7 @@ const Hero = () => {
               href="https://github.com/Yash08official"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full glass-morphism border border-border hover:border-primary transition-all duration-300 group hover:scale-110 magic-hover floating-icon"
+              className="p-3 rounded-full glass-morphism border border-border hover:border-primary transition-all duration-300 group hover:scale-110 magic-hover"
             >
               <Github className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
             </a>
@@ -142,14 +142,14 @@ const Hero = () => {
               href="https://www.linkedin.com/in/yash-wasankar-842886219/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full glass-morphism border border-border hover:border-primary transition-all duration-300 group hover:scale-110 magic-hover floating-icon"
+              className="p-3 rounded-full glass-morphism border border-border hover:border-primary transition-all duration-300 group hover:scale-110 magic-hover"
             >
               <Linkedin className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
             </a>
             
             <a
               href="mailto:yashwasankar008@gmail.com"
-              className="p-3 rounded-full glass-morphism border border-border hover:border-primary transition-all duration-300 group hover:scale-110 magic-hover floating-icon"
+              className="p-3 rounded-full glass-morphism border border-border hover:border-primary transition-all duration-300 group hover:scale-110 magic-hover"
             >
               <Mail className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
             </a>
@@ -158,7 +158,7 @@ const Hero = () => {
               href="https://leetcode.com/yash08official"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full glass-morphism border border-border hover:border-primary transition-all duration-300 group hover:scale-110 magic-hover floating-icon"
+              className="p-3 rounded-full glass-morphism border border-border hover:border-primary transition-all duration-300 group hover:scale-110 magic-hover"
             >
               <ExternalLink className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
             </a>

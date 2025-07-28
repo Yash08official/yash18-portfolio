@@ -148,7 +148,7 @@ const Skills = () => {
             >
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className={`p-2 rounded-lg bg-primary/10 ${category.color} floating-icon`}>
+                  <div className={`p-2 rounded-lg bg-primary/10 ${category.color}`}>
                     {category.icon}
                   </div>
                   <CardTitle className="text-xl">{category.title}</CardTitle>

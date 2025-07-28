@@ -147,7 +147,7 @@ const About = () => {
                 <Card className="hover-lift enhanced-card border-0 shadow-md glass-morphism backdrop-blur-sm group magic-hover shimmer">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:scale-110 transition-transform duration-300 floating-icon">
+                      <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:scale-110 transition-transform duration-300">
                         {highlight.icon}
                       </div>
                       <div>
