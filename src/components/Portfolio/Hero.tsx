@@ -26,7 +26,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pattern-dots glow-orbs">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pattern-dots cosmic-orbs">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -35,12 +35,17 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/85 to-background/95 dark:from-background/98 dark:via-background/95 dark:to-background/98" />
       </div>
 
-      {/* Enhanced Floating Glass Elements */}
+      {/* Enhanced Crystalline Glass Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-20 h-20 glass-morphism rounded-full blur-sm animate-pulse" />
-        <div className="absolute top-40 right-20 w-32 h-32 glass-morphism rounded-full blur-md animate-pulse delay-1000" />
-        <div className="absolute bottom-20 left-20 w-24 h-24 glass-morphism rounded-full blur-sm animate-pulse delay-2000" />
-        <div className="absolute bottom-40 right-10 w-16 h-16 glass-morphism rounded-full blur-sm animate-pulse delay-500" />
+        <div className="absolute top-20 left-10 w-20 h-20 crystalline rounded-full animate-pulse" />
+        <div className="absolute top-40 right-20 w-32 h-32 crystalline rounded-full animate-pulse delay-1000" />
+        <div className="absolute bottom-20 left-20 w-24 h-24 crystalline rounded-full animate-pulse delay-2000" />
+        <div className="absolute bottom-40 right-10 w-16 h-16 crystalline rounded-full animate-pulse delay-500" />
+        
+        {/* Additional Colorful Orbs */}
+        <div className="absolute top-1/4 left-1/4 w-6 h-6 rounded-full bg-tertiary/60 animate-bounce delay-700" />
+        <div className="absolute top-3/4 right-1/4 w-8 h-8 rounded-full bg-gold/60 animate-bounce delay-1200" />
+        <div className="absolute top-1/2 left-3/4 w-4 h-4 rounded-full bg-rose/60 animate-bounce delay-300" />
         
         {/* Central Glow Orb */}
         <div className="glow-orbs-center" />
@@ -55,9 +60,9 @@ const Hero = () => {
         >
           {/* Greeting Badge */}
           <motion.div variants={itemVariants} className="mb-6">
-            <Badge className="text-sm px-4 py-2 bg-primary/10 text-primary border-primary/20 hover:bg-primary/20">
-              <span className="mr-2">👋</span>
-              Hello, I'm Yash Wasankar
+            <Badge className="text-sm px-6 py-3 crystalline text-primary border-0 hover:scale-105 transition-transform duration-300">
+              <span className="mr-2 text-lg">👋</span>
+              <span className="holographic font-semibold">Hello, I'm Yash Wasankar</span>
             </Badge>
           </motion.div>
 
@@ -66,9 +71,9 @@ const Hero = () => {
             variants={itemVariants}
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
           >
-            <span className="text-gradient">Full Stack</span>
+            <span className="holographic">Full Stack</span>
             <br />
-            <span className="text-foreground">MERN Developer</span>
+            <span className="liquid-gradient bg-clip-text text-transparent">MERN Developer</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -77,9 +82,10 @@ const Hero = () => {
             className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed"
           >
             Passionate about creating innovative solutions with clean code. 
-            Exploring the realms of <span className="text-primary font-semibold">Cybersecurity</span>, 
-            <span className="text-secondary font-semibold"> AI/ML</span>, and 
-            <span className="text-accent font-semibold"> Cloud Technologies</span>.
+            Exploring the realms of <span className="text-primary font-bold">Cybersecurity</span>, 
+            <span className="text-tertiary font-bold"> AI/ML</span>, 
+            <span className="text-gold font-bold"> Cloud Technologies</span>, and 
+            <span className="text-rose font-bold"> Modern UI/UX</span>.
           </motion.p>
 
           {/* Personal Quote */}
@@ -87,7 +93,7 @@ const Hero = () => {
             variants={itemVariants}
             className="mb-8"
           >
-            <p className="text-lg font-medium text-gradient italic">
+            <p className="text-xl font-bold holographic italic">
               "Code. Create. Connect."
             </p>
           </motion.div>
@@ -108,7 +114,7 @@ const Hero = () => {
           >
             <Button 
               size="lg" 
-              className="group px-8 py-6 text-lg font-semibold bg-gradient-to-r from-primary to-secondary hover:from-primary-dark hover:to-secondary border-0 shadow-lg hover:shadow-xl transition-all duration-300 shimmer magic-hover animated-gradient"
+              className="group px-8 py-6 text-lg font-semibold liquid-gradient border-0 shadow-lg hover:shadow-xl transition-all duration-300 shimmer magic-hover text-white"
             >
               <Mail className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
               Get In Touch
@@ -117,7 +123,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="group px-8 py-6 text-lg font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 glass-morphism magic-hover"
+              className="group px-8 py-6 text-lg font-semibold neomorphism border-0 text-primary hover:text-primary-foreground transition-all duration-300 magic-hover"
             >
               <Download className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
               Download CV
