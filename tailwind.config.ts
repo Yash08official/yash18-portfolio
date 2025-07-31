@@ -44,21 +44,6 @@ export default {
 					foreground: 'hsl(var(--accent-foreground))',
 					light: 'hsl(var(--accent-light))'
 				},
-				tertiary: {
-					DEFAULT: 'hsl(var(--tertiary))',
-					foreground: 'hsl(var(--tertiary-foreground))',
-					light: 'hsl(var(--tertiary-light))'
-				},
-				gold: {
-					DEFAULT: 'hsl(var(--gold))',
-					foreground: 'hsl(var(--gold-foreground))',
-					light: 'hsl(var(--gold-light))'
-				},
-				rose: {
-					DEFAULT: 'hsl(var(--rose))',
-					foreground: 'hsl(var(--rose-foreground))',
-					light: 'hsl(var(--rose-light))'
-				},
 				success: {
 					DEFAULT: 'hsl(var(--success))',
 					foreground: 'hsl(var(--success-foreground))'

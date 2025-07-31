@@ -110,16 +110,13 @@ const Skills = () => {
   }, []);
 
   return (
-    <section id="skills" className="py-20 relative overflow-hidden glow-orbs">
+    <section id="skills" className="py-20 relative overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-5"
         style={{ backgroundImage: `url(${skillsBg})` }}
       />
       <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/95 to-background/90" />
-      
-      {/* Central Glow */}
-      <div className="glow-orbs-center" />
       
       <div className="relative z-10 container mx-auto px-6">
         <motion.div
@@ -144,7 +141,7 @@ const Skills = () => {
           {skillCategories.map((category, categoryIndex) => (
             <Card 
               key={categoryIndex} 
-              className="hover-lift border-0 shadow-lg glass-morphism backdrop-blur-sm magic-hover shimmer"
+              className="hover-lift border-0 shadow-lg bg-card/50 backdrop-blur-sm"
             >
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3 mb-2">
