@@ -39,9 +39,9 @@ const PersonalJourney = () => {
     {
       title: "GeekStreak 2024 Challenge",
       platform: "GeeksforGeeks",
-      description: "100 days of consistent coding, solving problems in Java and JavaScript",
-      status: "Active",
-      progress: "65/100 days",
+      description: "Successfully completed 100 days of consistent coding, solving problems in Java and JavaScript",
+      status: "Completed",
+      progress: "100/100 days",
       icon: <Target className="w-5 h-5" />,
       color: "text-primary"
     },

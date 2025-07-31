@@ -74,8 +74,8 @@ const Certifications = () => {
       institution: "GeeksforGeeks",
       year: "2024",
       type: "100 Days Challenge",
-      status: "Active",
-      description: "Daily coding challenge improving problem-solving skills in Java and JavaScript"
+      status: "Completed",
+      description: "Successfully completed 100 days of daily coding challenges, improving problem-solving skills in Java and JavaScript"
     },
     {
       title: "Cybersecurity Fundamentals",
