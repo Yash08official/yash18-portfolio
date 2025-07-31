@@ -59,7 +59,7 @@ const Hero = () => {
           className="max-w-4xl mx-auto"
         >
           {/* Greeting Badge */}
-          <motion.div variants={itemVariants} className="mb-6">
+          <motion.div variants={itemVariants} className="mb-8 mt-8">
             <Badge className="text-sm px-6 py-3 crystalline text-primary border-0 hover:scale-105 transition-transform duration-300">
               <span className="mr-2 text-lg">👋</span>
               <span className="holographic font-semibold">Hello, I'm Yash Wasankar</span>
