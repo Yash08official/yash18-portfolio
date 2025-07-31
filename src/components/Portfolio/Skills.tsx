@@ -73,8 +73,6 @@ const Skills = () => {
       icon: <Cpu className="w-6 h-6" />,
       color: "text-secondary",
       skills: [
-        { name: "AI/ML", level: 60, icon: "🤖" },
-        { name: "Python", level: 70, icon: "🐍" },
         { name: "Blockchain", level: 65, icon: "⛓️" },
         { name: "Smart Contracts", level: 60, icon: "📜" },
         { name: "Cybersecurity", level: 55, icon: "🛡️" },
