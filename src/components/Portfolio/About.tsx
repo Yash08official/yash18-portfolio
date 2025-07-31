@@ -111,6 +111,12 @@ const About = () => {
                 <span className="text-accent font-semibold"> Cybersecurity, AI/ML, and Cloud Computing</span>.
               </p>
 
+              <p className="text-lg leading-relaxed">
+                Beyond technology, I draw inspiration from <span className="text-gradient font-bold text-xl animate-pulse bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text">🏏 Virat Kohli 🏏</span> 
+                - his dedication, consistency, and never-give-up attitude perfectly align with my approach to coding and life. 
+                Just like how he perfects his craft on the cricket field, I strive for excellence in every line of code I write.
+              </p>
+
               <div className="flex flex-wrap gap-2 mt-6">
                 <Badge variant="secondary" className="hover:bg-primary hover:text-primary-foreground transition-colors hover:scale-105">MERN Stack</Badge>
                 <Badge variant="secondary" className="hover:bg-primary hover:text-primary-foreground transition-colors hover:scale-105">TypeScript</Badge>
