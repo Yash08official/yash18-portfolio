@@ -1,22 +1,25 @@
 import { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Text, OrbitControls, Float, Sphere, Box } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
 function AnimatedSphere() {
   const meshRef = useRef<THREE.Mesh>(null!);
   
   useFrame((state, delta) => {
-    meshRef.current.rotation.x += delta * 0.5;
-    meshRef.current.rotation.y += delta * 0.3;
+    if (meshRef.current) {
+      meshRef.current.rotation.x += delta * 0.5;
+      meshRef.current.rotation.y += delta * 0.3;
+    }
   });
 
   return (
-    <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-      <Sphere ref={meshRef} args={[1, 32, 32]} position={[-2, 0, 0]}>
+    <group position={[-2, 0, 0]}>
+      <mesh ref={meshRef}>
+        <sphereGeometry args={[1, 32, 32]} />
         <meshStandardMaterial color="#8B5CF6" wireframe />
-      </Sphere>
-    </Float>
+      </mesh>
+    </group>
   );
 }
 
@@ -24,14 +27,28 @@ function AnimatedBox() {
   const meshRef = useRef<THREE.Mesh>(null!);
   
   useFrame((state, delta) => {
-    meshRef.current.rotation.z += delta * 0.8;
-    meshRef.current.position.y = Math.sin(state.clock.elapsedTime) * 0.5;
+    if (meshRef.current) {
+      meshRef.current.rotation.z += delta * 0.8;
+      meshRef.current.position.y = Math.sin(state.clock.elapsedTime) * 0.5;
+    }
   });
 
   return (
-    <Box ref={meshRef} args={[1.5, 1.5, 1.5]} position={[2, 0, 0]}>
+    <mesh ref={meshRef} position={[2, 0, 0]}>
+      <boxGeometry args={[1.5, 1.5, 1.5]} />
       <meshStandardMaterial color="#10B981" />
-    </Box>
+    </mesh>
+  );
+}
+
+function FloatingText() {
+  return (
+    <group position={[0, -3, 0]}>
+      <mesh>
+        <planeGeometry args={[4, 1]} />
+        <meshBasicMaterial color="#3B82F6" transparent opacity={0.8} />
+      </mesh>
+    </group>
   );
 }
 
@@ -42,15 +59,7 @@ function Scene() {
       <pointLight position={[10, 10, 10]} />
       <AnimatedSphere />
       <AnimatedBox />
-      <Text
-        position={[0, -3, 0]}
-        fontSize={0.5}
-        color="#3B82F6"
-        anchorX="center"
-        anchorY="middle"
-      >
-        Three.js + React
-      </Text>
+      <FloatingText />
       <OrbitControls enableZoom={false} enablePan={false} />
     </>
   );
