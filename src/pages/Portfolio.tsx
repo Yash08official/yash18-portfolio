@@ -5,6 +5,7 @@ import Projects from "@/components/Portfolio/Projects";
 import Skills from "@/components/Portfolio/Skills";
 import Certifications from "@/components/Portfolio/Certifications";
 import PersonalJourney from "@/components/Portfolio/PersonalJourney";
+import Animations from "@/components/Portfolio/Animations";
 import Contact from "@/components/Portfolio/Contact";
 import Footer from "@/components/Portfolio/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -21,6 +22,7 @@ const Portfolio = () => {
           <Skills />
           <Certifications />
           <PersonalJourney />
+          <Animations />
           <Contact />
         </main>
         <Footer />
