@@ -166,8 +166,10 @@ const Hero = () => {
           </motion.div>
 
           {/* Right Column - 3D Avatar Scene */}
-          <div className="relative h-[600px] lg:h-screen">
-            <Avatar3DScene />
+          <div className="relative h-[600px] lg:h-screen w-full">
+            <div className="absolute inset-0 bg-transparent">
+              <Avatar3DScene />
+            </div>
           </div>
         </div>
       </div>
