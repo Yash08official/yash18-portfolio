@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Github, Linkedin, Mail, MapPin, Download, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-bg.jpg";
+import Avatar3DScene from "@/components/animations/Avatar3DScene";
 
 const Hero = () => {
   const containerVariants = {
@@ -43,13 +44,15 @@ const Hero = () => {
         <div className="absolute bottom-40 right-10 w-16 h-16 bg-primary/10 rounded-full blur-xl animate-pulse delay-500" />
       </div>
 
-      <div className="relative z-20 container mx-auto px-6 text-center">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="max-w-4xl mx-auto"
-        >
+      <div className="relative z-20 container mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-8 items-center min-h-screen">
+          {/* Left Column - Text Content */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="text-center lg:text-left"
+          >
           {/* Greeting Badge */}
           <motion.div variants={itemVariants} className="mb-6">
             <Badge className="text-sm px-4 py-2 bg-primary/10 text-primary border-primary/20 hover:bg-primary/20">
@@ -92,7 +95,7 @@ const Hero = () => {
           {/* Location */}
           <motion.div 
             variants={itemVariants}
-            className="flex items-center justify-center gap-2 mb-8 text-muted-foreground"
+            className="flex items-center justify-center lg:justify-start gap-2 mb-8 text-muted-foreground"
           >
             <MapPin className="w-4 h-4" />
             <span>Pune, India</span>
@@ -101,7 +104,7 @@ const Hero = () => {
           {/* CTA Buttons */}
           <motion.div 
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12"
           >
             <Button 
               size="lg" 
@@ -124,7 +127,7 @@ const Hero = () => {
           {/* Social Links */}
           <motion.div 
             variants={itemVariants}
-            className="flex justify-center gap-6"
+            className="flex justify-center lg:justify-start gap-6"
           >
             <a
               href="https://github.com/Yash08official"
@@ -160,7 +163,13 @@ const Hero = () => {
               <ExternalLink className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
             </a>
           </motion.div>
-        </motion.div>
+          </motion.div>
+
+          {/* Right Column - 3D Avatar Scene */}
+          <div className="relative h-[600px] lg:h-screen">
+            <Avatar3DScene />
+          </div>
+        </div>
       </div>
 
       {/* Scroll Indicator */}
