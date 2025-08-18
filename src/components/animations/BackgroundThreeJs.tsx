@@ -349,7 +349,7 @@ function BackgroundScene() {
 
 const BackgroundThreeJs = () => {
   return (
-    <div className="fixed inset-0 -z-10">
+    <div className="fixed inset-0 -z-10 opacity-40 dark:opacity-70">
       <Canvas
         camera={{ position: [0, 0, 30], fov: 75 }}
         style={{ background: 'transparent' }}
