@@ -29,10 +29,10 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pattern-dots">
       {/* Background Image with Overlay */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat -z-10"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/85 to-background/95 dark:from-background/98 dark:via-background/95 dark:to-background/98" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/80 to-background/90 dark:from-background/95 dark:via-background/90 dark:to-background/95" />
       </div>
 
       {/* Floating Shapes */}
@@ -43,7 +43,7 @@ const Hero = () => {
         <div className="absolute bottom-40 right-10 w-16 h-16 bg-primary/10 rounded-full blur-xl animate-pulse delay-500" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 text-center">
+      <div className="relative z-20 container mx-auto px-6 text-center">
         <motion.div
           variants={containerVariants}
           initial="hidden"

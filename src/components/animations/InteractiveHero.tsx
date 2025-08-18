@@ -123,7 +123,7 @@ function HeroScene() {
 
 const InteractiveHero = () => {
   return (
-    <div className="absolute inset-0 pointer-events-none opacity-60 dark:opacity-80">
+    <div className="absolute inset-0 pointer-events-none z-10 opacity-80 dark:opacity-90">
       <Canvas
         camera={{ position: [0, 0, 10], fov: 60 }}
         style={{ background: 'transparent' }}
