@@ -36,46 +36,80 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/80 to-background/90 dark:from-background/95 dark:via-background/90 dark:to-background/95" />
       </div>
 
-      {/* Modern Geometric Background Animation */}
+      {/* Dynamic Tech-Inspired Background */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Animated Geometric Shapes */}
+        {/* Morphing Gradient Waves */}
         <div className="absolute inset-0">
-          {/* Diagonal Lines */}
-          <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-[slideRight_8s_linear_infinite]" />
-          <div className="absolute top-1/3 right-0 w-full h-0.5 bg-gradient-to-r from-transparent via-secondary/15 to-transparent animate-[slideLeft_10s_linear_infinite]" />
-          <div className="absolute bottom-1/3 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-accent/10 to-transparent animate-[slideRight_12s_linear_infinite]" />
-          
-          {/* Floating Hexagons */}
-          {[...Array(6)].map((_, i) => (
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/10 via-transparent to-secondary/8 animate-[morphWave_12s_ease-in-out_infinite]" />
+          <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-accent/8 via-transparent to-primary/6 animate-[morphWave_15s_ease-in-out_infinite_reverse]" />
+        </div>
+        
+        {/* Floating Code Elements */}
+        <div className="absolute inset-0">
+          {['<', '>', '{', '}', '(', ')', '[', ']', '/>', '::'].map((symbol, i) => (
             <div
               key={i}
-              className="absolute w-8 h-8 border border-primary/20 dark:border-primary/30 animate-[hexFloat_15s_ease-in-out_infinite]"
+              className="absolute text-primary/20 dark:text-primary/40 font-mono text-2xl font-bold animate-[codeFloat_20s_linear_infinite]"
               style={{
-                left: `${20 + i * 15}%`,
-                top: `${20 + (i % 3) * 20}%`,
+                left: `${Math.random() * 90}%`,
+                top: `${Math.random() * 90}%`,
                 animationDelay: `${i * 2}s`,
-                clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'
+                animationDuration: `${15 + Math.random() * 10}s`
               }}
-            />
-          ))}
-          
-          {/* Triangular Elements */}
-          {[...Array(4)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-6 h-6 bg-secondary/10 dark:bg-secondary/20 animate-[triangleRotate_20s_linear_infinite]"
-              style={{
-                right: `${10 + i * 20}%`,
-                bottom: `${15 + i * 15}%`,
-                animationDelay: `${i * 3}s`,
-                clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)'
-              }}
-            />
+            >
+              {symbol}
+            </div>
           ))}
         </div>
         
-        {/* Subtle Dot Pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_2px_2px,hsl(var(--foreground))_1px,transparent_0)] [background-size:80px_80px] opacity-[0.03] dark:opacity-[0.08]" />
+        {/* Constellation Network */}
+        <div className="absolute inset-0">
+          {[...Array(8)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-3 h-3 bg-gradient-to-r from-secondary to-primary rounded-full animate-[constellation_18s_ease-in-out_infinite]"
+              style={{
+                left: `${20 + i * 10}%`,
+                top: `${30 + (i % 3) * 20}%`,
+                animationDelay: `${i * 1.5}s`,
+                boxShadow: '0 0 10px hsl(var(--primary) / 0.5)'
+              }}
+            >
+              {/* Connection Lines */}
+              {i < 7 && (
+                <div 
+                  className="absolute w-20 h-0.5 bg-gradient-to-r from-primary/30 to-transparent animate-[pulse_3s_ease-in-out_infinite]"
+                  style={{
+                    left: '100%',
+                    top: '50%',
+                    transformOrigin: 'left center',
+                    transform: `rotate(${(i * 30) % 360}deg)`
+                  }}
+                />
+              )}
+            </div>
+          ))}
+        </div>
+        
+        {/* Floating Tech Cards */}
+        <div className="absolute inset-0">
+          {['AI', 'ML', 'JS', 'TS', 'DB', 'API'].map((tech, i) => (
+            <div
+              key={tech}
+              className="absolute px-3 py-1 bg-card/30 dark:bg-card/20 backdrop-blur-sm border border-primary/20 rounded-lg text-xs font-semibold text-primary animate-[techCard_25s_linear_infinite]"
+              style={{
+                left: `${10 + i * 15}%`,
+                bottom: `${20 + (i % 2) * 40}%`,
+                animationDelay: `${i * 3}s`
+              }}
+            >
+              {tech}
+            </div>
+          ))}
+        </div>
+        
+        {/* Ambient Glow Effect */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.1),transparent_70%)] animate-[ambientGlow_8s_ease-in-out_infinite]" />
       </div>
 
       <div className="relative z-20 container mx-auto px-6">
