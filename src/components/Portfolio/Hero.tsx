@@ -36,30 +36,46 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/80 to-background/90 dark:from-background/95 dark:via-background/90 dark:to-background/95" />
       </div>
 
-      {/* Elegant Background Animation */}
+      {/* Modern Geometric Background Animation */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Gradient Orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl animate-[float_6s_ease-in-out_infinite] opacity-60" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-secondary/15 to-accent/15 rounded-full blur-3xl animate-[float_8s_ease-in-out_infinite_reverse] opacity-50" />
-        
-        {/* Floating Particles */}
+        {/* Animated Geometric Shapes */}
         <div className="absolute inset-0">
-          {[...Array(12)].map((_, i) => (
+          {/* Diagonal Lines */}
+          <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-[slideRight_8s_linear_infinite]" />
+          <div className="absolute top-1/3 right-0 w-full h-0.5 bg-gradient-to-r from-transparent via-secondary/15 to-transparent animate-[slideLeft_10s_linear_infinite]" />
+          <div className="absolute bottom-1/3 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-accent/10 to-transparent animate-[slideRight_12s_linear_infinite]" />
+          
+          {/* Floating Hexagons */}
+          {[...Array(6)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-2 h-2 bg-primary/30 rounded-full animate-[drift_10s_linear_infinite]"
+              className="absolute w-8 h-8 border border-primary/20 dark:border-primary/30 animate-[hexFloat_15s_ease-in-out_infinite]"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 10}s`,
-                animationDuration: `${8 + Math.random() * 6}s`
+                left: `${20 + i * 15}%`,
+                top: `${20 + (i % 3) * 20}%`,
+                animationDelay: `${i * 2}s`,
+                clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'
+              }}
+            />
+          ))}
+          
+          {/* Triangular Elements */}
+          {[...Array(4)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-6 h-6 bg-secondary/10 dark:bg-secondary/20 animate-[triangleRotate_20s_linear_infinite]"
+              style={{
+                right: `${10 + i * 20}%`,
+                bottom: `${15 + i * 15}%`,
+                animationDelay: `${i * 3}s`,
+                clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)'
               }}
             />
           ))}
         </div>
         
-        {/* Subtle Grid Pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,hsl(var(--primary))_1px,transparent_0)] [background-size:50px_50px] opacity-[0.02] dark:opacity-[0.05]" />
+        {/* Subtle Dot Pattern */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_2px_2px,hsl(var(--foreground))_1px,transparent_0)] [background-size:80px_80px] opacity-[0.03] dark:opacity-[0.08]" />
       </div>
 
       <div className="relative z-20 container mx-auto px-6">
