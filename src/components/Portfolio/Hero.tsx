@@ -112,14 +112,14 @@ const Hero = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.1),transparent_70%)] animate-[ambientGlow_8s_ease-in-out_infinite]" />
       </div>
 
-      <div className="relative z-20 container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-8 items-center min-h-screen">
+      <div className="relative z-20 container mx-auto px-6 h-full flex items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center w-full max-w-7xl mx-auto">
           {/* Left Column - Text Content */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-center lg:text-left"
+            className="text-center lg:text-left flex flex-col justify-center"
           >
           {/* Greeting Badge */}
           <motion.div variants={itemVariants} className="mb-6">
@@ -234,8 +234,8 @@ const Hero = () => {
           </motion.div>
 
           {/* Right Column - 3D Avatar Scene */}
-          <div className="relative h-[600px] lg:h-screen w-full">
-            <div className="absolute inset-0 bg-transparent">
+          <div className="relative h-[500px] lg:h-[600px] w-full flex items-center justify-center">
+            <div className="absolute inset-0 bg-transparent rounded-2xl overflow-hidden">
               <Avatar3DScene />
             </div>
           </div>
@@ -247,7 +247,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30"
       >
         <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
           <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-bounce" />
