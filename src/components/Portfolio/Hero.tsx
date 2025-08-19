@@ -121,26 +121,39 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <motion.div 
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12"
-          >
-            <Button 
-              size="lg" 
-              className="group px-8 py-6 text-lg font-semibold bg-gradient-to-r from-primary to-secondary hover:from-primary-dark hover:to-secondary border-0 shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              <Mail className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              Get In Touch
-            </Button>
-            
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="group px-8 py-6 text-lg font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-            >
-              <Download className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              Download CV
-            </Button>
-          </motion.div>
+  variants={itemVariants}
+  className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12"
+>
+  {/* Get In Touch Button */}
+  <a 
+    href="mailto:yashwasankar008@gmail.com" 
+    className="group"
+  >
+    <Button 
+      size="lg" 
+      className="px-8 py-6 text-lg font-semibold bg-gradient-to-r from-primary to-secondary hover:from-primary-dark hover:to-secondary border-0 shadow-lg hover:shadow-xl transition-all duration-300"
+    >
+      <Mail className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+      Get In Touch
+    </Button>
+  </a>
+
+  {/* Download CV Button */}
+  <a 
+    href="/Resume.pdf"   // Place your Resume file in the "public" folder as Resume.pdf
+    download="Yash_Wasankar_CV.pdf"
+    className="group"
+  >
+    <Button 
+      variant="outline" 
+      size="lg"
+      className="px-8 py-6 text-lg font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+    >
+      <Download className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+      Download CV
+    </Button>
+  </a>
+</motion.div>
 
           {/* Social Links */}
           <motion.div 
