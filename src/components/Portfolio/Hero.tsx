@@ -36,12 +36,30 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/80 to-background/90 dark:from-background/95 dark:via-background/90 dark:to-background/95" />
       </div>
 
-      {/* Floating Shapes */}
+      {/* Elegant Background Animation */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 rounded-full blur-xl animate-pulse" />
-        <div className="absolute top-40 right-20 w-32 h-32 bg-secondary/10 rounded-full blur-xl animate-pulse delay-1000" />
-        <div className="absolute bottom-20 left-20 w-24 h-24 bg-accent/10 rounded-full blur-xl animate-pulse delay-2000" />
-        <div className="absolute bottom-40 right-10 w-16 h-16 bg-primary/10 rounded-full blur-xl animate-pulse delay-500" />
+        {/* Gradient Orbs */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl animate-[float_6s_ease-in-out_infinite] opacity-60" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-secondary/15 to-accent/15 rounded-full blur-3xl animate-[float_8s_ease-in-out_infinite_reverse] opacity-50" />
+        
+        {/* Floating Particles */}
+        <div className="absolute inset-0">
+          {[...Array(12)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-2 h-2 bg-primary/30 rounded-full animate-[drift_10s_linear_infinite]"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 10}s`,
+                animationDuration: `${8 + Math.random() * 6}s`
+              }}
+            />
+          ))}
+        </div>
+        
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,hsl(var(--primary))_1px,transparent_0)] [background-size:50px_50px] opacity-[0.02] dark:opacity-[0.05]" />
       </div>
 
       <div className="relative z-20 container mx-auto px-6">

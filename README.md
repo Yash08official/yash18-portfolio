@@ -1,7 +1,9 @@
-# Welcome to Your Lovable Project 🚀
+# Yash Wasankar - Portfolio Website 🚀
 
-## Project Info
-**URL**: [Lovable Project](https://lovable.dev/projects/df54c9d3-120a-49cf-9626-720d4509044f)
+## About This Project
+This is a modern, interactive portfolio website showcasing full-stack development skills, built with cutting-edge web technologies and featuring stunning 3D animations.
+
+**Live Preview**: [Lovable Project](https://lovable.dev/projects/df54c9d3-120a-49cf-9626-720d4509044f)
 
 ---
 
@@ -70,14 +72,24 @@ npm run dev
 
 ---
 
-## Technologies Used
+## ✨ Features
 
-This project is built with:  
-- **Vite** ⚡  
-- **TypeScript** 🟦  
-- **React** ⚛️  
-- **shadcn-ui** 🎨  
-- **Tailwind CSS** 💨  
+- **Interactive 3D Avatar** - Animated character with orbital skills display
+- **Modern Responsive Design** - Optimized for all devices and screen sizes  
+- **Dark/Light Mode Support** - Seamless theme switching
+- **Smooth Animations** - Framer Motion powered transitions
+- **Professional Portfolio Sections** - Skills, projects, certifications, and contact
+- **Clean Code Architecture** - TypeScript, component-based structure
+
+## 🛠️ Technologies Used
+
+This portfolio showcases expertise in:
+- **Frontend**: React 18, TypeScript, Tailwind CSS
+- **3D Graphics**: Three.js, React Three Fiber, React Three Drei
+- **Animations**: Framer Motion, CSS Keyframes
+- **UI Components**: shadcn/ui, Radix UI primitives
+- **Build Tools**: Vite, Modern ES modules
+- **Design**: Responsive design, CSS Grid/Flexbox
 
 ## Deployment
 
