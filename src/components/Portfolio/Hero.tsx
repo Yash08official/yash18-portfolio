@@ -36,90 +36,40 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/80 to-background/90 dark:from-background/95 dark:via-background/90 dark:to-background/95" />
       </div>
 
-      {/* Dynamic Tech-Inspired Background */}
+      {/* Elegant Background Animation */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Morphing Gradient Waves */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/10 via-transparent to-secondary/8 animate-[morphWave_12s_ease-in-out_infinite]" />
-          <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-accent/8 via-transparent to-primary/6 animate-[morphWave_15s_ease-in-out_infinite_reverse]" />
-        </div>
+        {/* Gradient Orbs */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl animate-[float_6s_ease-in-out_infinite] opacity-60" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-secondary/15 to-accent/15 rounded-full blur-3xl animate-[float_8s_ease-in-out_infinite_reverse] opacity-50" />
         
-        {/* Floating Code Elements */}
+        {/* Floating Particles */}
         <div className="absolute inset-0">
-          {['<', '>', '{', '}', '(', ')', '[', ']', '/>', '::'].map((symbol, i) => (
+          {[...Array(12)].map((_, i) => (
             <div
               key={i}
-              className="absolute text-primary/20 dark:text-primary/40 font-mono text-2xl font-bold animate-[codeFloat_20s_linear_infinite]"
+              className="absolute w-2 h-2 bg-primary/30 rounded-full animate-[drift_10s_linear_infinite]"
               style={{
-                left: `${Math.random() * 90}%`,
-                top: `${Math.random() * 90}%`,
-                animationDelay: `${i * 2}s`,
-                animationDuration: `${15 + Math.random() * 10}s`
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 10}s`,
+                animationDuration: `${8 + Math.random() * 6}s`
               }}
-            >
-              {symbol}
-            </div>
+            />
           ))}
         </div>
         
-        {/* Constellation Network */}
-        <div className="absolute inset-0">
-          {[...Array(8)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-3 h-3 bg-gradient-to-r from-secondary to-primary rounded-full animate-[constellation_18s_ease-in-out_infinite]"
-              style={{
-                left: `${20 + i * 10}%`,
-                top: `${30 + (i % 3) * 20}%`,
-                animationDelay: `${i * 1.5}s`,
-                boxShadow: '0 0 10px hsl(var(--primary) / 0.5)'
-              }}
-            >
-              {/* Connection Lines */}
-              {i < 7 && (
-                <div 
-                  className="absolute w-20 h-0.5 bg-gradient-to-r from-primary/30 to-transparent animate-[pulse_3s_ease-in-out_infinite]"
-                  style={{
-                    left: '100%',
-                    top: '50%',
-                    transformOrigin: 'left center',
-                    transform: `rotate(${(i * 30) % 360}deg)`
-                  }}
-                />
-              )}
-            </div>
-          ))}
-        </div>
-        
-        {/* Floating Tech Cards */}
-        <div className="absolute inset-0">
-          {['AI', 'ML', 'JS', 'TS', 'DB', 'API'].map((tech, i) => (
-            <div
-              key={tech}
-              className="absolute px-3 py-1 bg-card/30 dark:bg-card/20 backdrop-blur-sm border border-primary/20 rounded-lg text-xs font-semibold text-primary animate-[techCard_25s_linear_infinite]"
-              style={{
-                left: `${10 + i * 15}%`,
-                bottom: `${20 + (i % 2) * 40}%`,
-                animationDelay: `${i * 3}s`
-              }}
-            >
-              {tech}
-            </div>
-          ))}
-        </div>
-        
-        {/* Ambient Glow Effect */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.1),transparent_70%)] animate-[ambientGlow_8s_ease-in-out_infinite]" />
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,hsl(var(--primary))_1px,transparent_0)] [background-size:50px_50px] opacity-[0.02] dark:opacity-[0.05]" />
       </div>
 
-      <div className="relative z-20 container mx-auto px-6 h-full flex items-center">
-        <div className="grid lg:grid-cols-2 gap-12 items-center w-full max-w-7xl mx-auto">
+      <div className="relative z-20 container mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-8 items-center min-h-screen">
           {/* Left Column - Text Content */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-center lg:text-left flex flex-col justify-center"
+            className="text-center lg:text-left"
           >
           {/* Greeting Badge */}
           <motion.div variants={itemVariants} className="mb-6">
@@ -234,8 +184,8 @@ const Hero = () => {
           </motion.div>
 
           {/* Right Column - 3D Avatar Scene */}
-          <div className="relative h-[500px] lg:h-[600px] w-full flex items-center justify-center">
-            <div className="absolute inset-0 bg-transparent rounded-2xl overflow-hidden">
+          <div className="relative h-[600px] lg:h-screen w-full">
+            <div className="absolute inset-0 bg-transparent">
               <Avatar3DScene />
             </div>
           </div>
@@ -247,7 +197,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
           <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-bounce" />
