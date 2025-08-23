@@ -20,17 +20,22 @@ const Navigation = () => {
     { label: "About", href: "#about" },
     { label: "Projects", href: "#projects" },
     { label: "Skills", href: "#skills" },
-    { label: "Certifications", href: "#certifications" },
-    { label: "Journey", href: "#journey" },
+    { label: "Blog", href: "/blog", external: true },
+    { label: "Services", href: "/services", external: true },
+    { label: "Gallery", href: "/gallery", external: true },
     { label: "Contact", href: "#contact" },
   ];
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false);
+  const handleNavigation = (href: string, external?: boolean) => {
+    if (external) {
+      window.location.href = href;
+    } else {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
+    setIsOpen(false);
   };
 
   return (
@@ -49,7 +54,7 @@ const Navigation = () => {
             {navItems.map((item) => (
               <button
                 key={item.label}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => handleNavigation(item.href, item.external)}
                 className="text-foreground hover:text-primary transition-colors duration-300 animated-underline"
               >
                 {item.label}
@@ -91,7 +96,7 @@ const Navigation = () => {
               {navItems.map((item) => (
                 <button
                   key={item.label}
-                  onClick={() => scrollToSection(item.href)}
+                  onClick={() => handleNavigation(item.href, item.external)}
                   className="text-left text-foreground hover:text-primary transition-colors duration-300 py-2"
                 >
                   {item.label}
