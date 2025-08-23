@@ -7,7 +7,7 @@ import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import ProjectDetails from "./pages/ProjectDetails";
 import Resume from "./pages/Resume";
-import Services from "./pages/Services";
+import Repositories from "./pages/Repositories";
 import Testimonials from "./pages/Testimonials";
 import Gallery from "./pages/Gallery";
 import NotFound from "./pages/NotFound";
@@ -25,7 +25,7 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/project/:id" element={<ProjectDetails />} />
           <Route path="/resume" element={<Resume />} />
-          <Route path="/services" element={<Services />} />
+          <Route path="/repositories" element={<Repositories />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/gallery" element={<Gallery />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

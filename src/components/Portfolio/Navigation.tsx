@@ -21,7 +21,7 @@ const Navigation = () => {
     { label: "Projects", href: "#projects" },
     { label: "Skills", href: "#skills" },
     { label: "Blog", href: "/blog", external: true },
-    { label: "Services", href: "/services", external: true },
+    { label: "Repositories", href: "/repositories", external: true },
     { label: "Gallery", href: "/gallery", external: true },
     { label: "Contact", href: "#contact" },
   ];
